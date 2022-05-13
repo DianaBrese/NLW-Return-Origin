@@ -1,4 +1,12 @@
+window.addEventListener("scroll",onScroll)
+onScroll()
+
 function onScroll() {
+   showNavOnScroll();
+   showBackToTopButtonOnScroll();
+};
+
+function showNavOnScroll() {
     if(scrollY > 0) {
         navigation.classList.add("scroll");
 
@@ -13,14 +21,23 @@ function onScroll() {
     } else {
         navigation.classList.remove("scroll");
 
-        //Trocar cor do icone de menu para verde
+        //Trocar cor do icone de menu 
         const path = document.getElementsByClassName("svg");
         for(index = 0; index < path.length; index++) {
-            path[index].style.stroke = "#00856F";
+            const footer = document.getElementsByTagName("footer")[0];
+            path[index].style.stroke = window.getComputedStyle(footer).backgroundColor;
         }
 
     }
-};
+}
+
+function showBackToTopButtonOnScroll() {
+    if(scrollY > 400) {
+        backToTopButton.classList.add("show")
+    } else {
+        backToTopButton.classList.remove("show")
+    }
+}
 
 function openMenu() {
     document.body.classList.add("menu-expanded")
@@ -37,5 +54,7 @@ ScrollReveal({
     distance: "30px",
     duration: 700,
 }).reveal('#home,#home img, #home .stats, #services, #services header, #services .card, #about, #about header, #about content');
+
+
 
 
