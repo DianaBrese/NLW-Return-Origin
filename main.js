@@ -1,6 +1,7 @@
 window.addEventListener('scroll', onScroll)
 onScroll()
 
+
 function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
@@ -82,6 +83,8 @@ function openMenu() {
 function closeMenu() {
   document.body.classList.remove('menu-expanded')
 }
+
+
 
 ScrollReveal({
   origin: 'top',
