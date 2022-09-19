@@ -48,8 +48,8 @@ function activateMenuAtCurrentSection(section) {
 
 function showNavOnScroll() {
   if (scrollY > 0) {
-    navigation.classList.add('scroll')
-
+    let putScroll = document.getElementById("navigation")
+    putScroll.classList.add("scroll")
     // Trocar cor do icone de menu para branco
 
     const path = document.getElementsByClassName('svg')
@@ -57,7 +57,8 @@ function showNavOnScroll() {
       path[index].style.stroke = 'white'
     }
   } else {
-    navigation.classList.remove('scroll')
+    let putScroll = document.getElementById("navigation")
+    putScroll.classList.remove("scroll")
 
     //Trocar cor do icone de menu para a cor primária
     const path = document.getElementsByClassName('svg')
@@ -67,6 +68,8 @@ function showNavOnScroll() {
     }
   }
 }
+
+
 
 function showBackToTopButtonOnScroll() {
   if (scrollY > 400) {
